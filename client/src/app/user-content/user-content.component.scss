@@ -1,0 +1,87 @@
+.user-content {
+    display: flex;
+    margin-bottom: 15%;
+    .user-profile {
+        margin-top: 5%;
+        width: 25%;
+        text-align: center;
+        .header {
+            border-radius: 5px 0px 0px 0px;
+            background-color: indigo;
+            padding: 10%;
+            .user-photo {
+                padding: 10%;
+                width: 75%;
+                border-radius: 50%;
+            }
+            h5, span {
+                font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+                color: white;
+            }
+        }
+        .body {
+            background-color: slateblue;
+            padding: 10%;
+            .bio {
+                text-align: left;
+            }
+            .user-data {
+                display: flex;
+                .data-value {
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    margin-left: 10px;
+                }
+            }
+            .user-data, .bio {
+                font-size: 12px;
+                font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+                color: white;
+            }
+        }
+    }
+    .user-repos {
+        border-radius: 5px;
+        margin-top: 3%;
+        width: 75%;
+        box-shadow: 5px 5px 10px #888888;
+        .repo {
+            margin: 5%;
+            padding: 3%;
+            border-radius: 5px;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+            display: flex;
+            flex-flow: row;
+            .repo-info {
+                display: inline-block;
+                width: 85%;
+            }
+            .star-button {
+                display: inline-block;
+                margin: auto;
+                button {
+                    border-radius: 5px;
+                }
+            }            
+            .number-stars {
+                color: purple;
+                .star {
+                    font-size: 100% !important;
+                }
+                span {
+                    vertical-align: text-bottom;
+                }
+            }
+        }
+        .no-repo {
+            display: flex;
+            margin-top: 25%;
+            h3 {
+                font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+                margin: auto;
+            }
+        }
+    }
+}
+
+

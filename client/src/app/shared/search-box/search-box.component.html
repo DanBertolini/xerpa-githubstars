@@ -1,0 +1,15 @@
+<div class="content" [ngStyle]="{'flex-flow': mainLayout ? 'column' : 'row'}">
+  <h2 class="github-title" [ngStyle]="{'width': mainLayout ? '100%' : '25%', 'text-align': mainLayout ? 'center' : 'left'}">
+    <span>Github</span><span class="stars">Stars</span>
+  </h2>
+  <form [ngStyle]="{'margin': mainLayout ? 'auto' : 'initial'}">
+    <mat-form-field class="col-xs-12 search-text">
+      <input matInput placeholder="Github Username" name="searchedUserName" type="search" [(ngModel)]="searchedUserName" 
+        (keyup)="onEnterPressed($event)">
+      <mat-icon matSuffix class="search-icon" (click)="search()">search</mat-icon>
+    </mat-form-field>
+  </form>
+  <div class="user" *ngIf="!mainLayout" >
+    <current-user></current-user>
+  </div>
+</div>

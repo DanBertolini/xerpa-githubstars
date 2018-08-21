@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="main-header">
+    <div class="search">
+      <search-box *ngIf="searchedUserName" [searchedUserName]="searchedUserName"></search-box>
+    </div>    
+  </div>
+  <div class="user-content">
+    <div class="user-profile">
+      <div class="header">
+        <img class="user-photo" [src]="searchedUser?.avatar_url" />
+        <h5>{{searchedUser?.name}}</h5>
+        <span>{{searchedUserName}}</span>
+      </div>
+      <div class="body">
+        <p class="bio">{{searchedUser?.bio}}</p>
+        <div class="user-data">
+          <span>
+            <mat-icon matSuffix>supervisor_account</mat-icon>
+          </span>
+          <span class="data-value">{{searchedUser?.company || 'Não Informado'}}</span>
+        </div>
+        <div class="user-data">
+          <span>
+            <mat-icon matSuffix>location_on</mat-icon>
+          </span>
+          <span class="data-value">{{searchedUser?.location || 'Não Informado'}}</span>
+        </div>
+        <div class="user-data">
+          <span>
+            <mat-icon matSuffix>email</mat-icon>
+          </span>
+          <span class="data-value">{{searchedUser?.email || 'Não Informado'}}</span>
+        </div>
+        <div class="user-data">
+          <span>
+            <mat-icon matSuffix>public</mat-icon>
+          </span>
+          <span class="data-value">{{searchedUser?.blog || 'Não Informado'}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="user-repos">
+      <div *ngIf="searchedUserStaredRepos.length > 0">
+        <div class="repo" *ngFor="let repo of searchedUserStaredRepos">
+          <div class="repo-info">
+            <h6>{{repo.full_name}}</h6>
+            <p>{{repo.description}}</p>
+            <div class="number-stars">
+              <mat-icon matSuffix class="star">star_outline</mat-icon>
+              <span>{{repo.stargazers_count}}</span>
+            </div>
+          </div>
+          <div class="star-button">
+            <button mat-stroked-button color="primary" (click)="starRepo(repo, true)" *ngIf="!repo.stared">star</button>
+            <button mat-flat-button color="primary" (click)="starRepo(repo, false)" *ngIf="repo.stared">unstar</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="searchedUserStaredRepos.length === 0" class="no-repo">
+        <h3>Nenhum repositório Estrelado</h3>
+      </div>
+    </div>
+  </div>
+</div>
